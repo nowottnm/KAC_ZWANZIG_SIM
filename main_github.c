@@ -4,8 +4,6 @@
 #include "global.h"
 #include "utility.h"
 #include "constants.h"
-#include "Verlet_alphas.h"
-#include "Opencl_Vverlet.h"
 #include <gsl/gsl_cblas.h>
 #include <time.h>
 #include <sys/types.h>
