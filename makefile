@@ -26,7 +26,7 @@ LFLAGS = -L/home/max/gsl/lib
 LIBS = -lgsl -lgslcblas -lm -lOpenCL
 
 # define the C source files
-SRCS = main_github.c utility.c constants.c steppmethods.c
+SRCS = main_github.c utility.c constants.c targets.c steppmethods.c
 
 # define the C object files 
 #
