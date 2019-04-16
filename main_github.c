@@ -3,7 +3,6 @@
 #include <gsl/gsl_sf_bessel.h>
 #include "global.h"
 #include "utility.h"
-#include "gnuplot.h"
 #include "constants.h"
 #include "Verlet_alphas.h"
 #include "Opencl_Vverlet.h"
