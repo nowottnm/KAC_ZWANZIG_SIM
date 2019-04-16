@@ -2,7 +2,6 @@
 #include <math.h>
 #include <gsl/gsl_sf_bessel.h>
 #include "utility.h"
-#include "gnuplot.h"
 #include "constants.h"
 #include <gsl/gsl_cblas.h>
 #include <time.h>
@@ -60,18 +59,9 @@
 #define MAX_NR_PLOTS 50
 #define ESCAPE_CELLS  0                		// anzahl der gitterzellen ohne hinderniss -1
 #define REFLEC_BINARY 1 					// toggle bewteewn reflecting new(1) or old(0) velocity, or no velcotiy adjust (2)
-#define YUKAWA_EXPONENT_FACTOR (double) 1.0	// factor a in V(r) = exp(- a r/d) * A /r^n
-#define YUKAWA_POWER (double) 1.0			// factor n in V(r) = exp(- a r/d) * A /r^n
-#define YUKAWA_TOL	(double) 1.0			// Yukawa wall set so thermal energy equals Potential resistance times TOL at target Length
-#define BURN_INT 	0 						// number of short samples to approx DIFF_COEFF
-#define BURN_END 300.0						// determine approx DIFF_COEFF in timespan (0, BURN_END)
-#define BURN_START 100.0 					// determine start time for burn 
-#define DIFF_ANALYTIC_BINARY 1 				// set 1 to use analytic instead of approximate coeccicient
 #define FLAG_RAND_BATH 0 					// set 1 for unifrom random bath, 0 for uniform deteriministic
 
-											//(so as to avoid sampling when particle is still equilibrating)
-#define PORE_OPENING 0.01 					// Size of Pore Opening relativ to LATTICE SPACING
-#define PORE_THICKNESS 0.1 
+
 #define DENSITY_SAMPLING_LENGTH 10
 #define DENSITY_SAMPLING_POINTS 10
 #define DIFF_COEFF_MODIFY 0.01 				// modify for VVerlet_Step_drag_sphere
