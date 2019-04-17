@@ -1,4 +1,5 @@
-README for the KAC ZWANZIG sim
+README for the KAC ZWANZIG sim, used in the Master thesis of M.Nowottnick.
+
 
 For this to compile, you need the gnu scientific library and openmp installed
 
@@ -27,6 +28,8 @@ STEPPER METHOD: sets target. Pick from 'VVerlet_Step_deriv_Box' (1-D box), 'VVer
 'VVerlet_Step_hardsphere_reflect_Kupf' for square lattice of spheres
 MAX_NR_PLOTS: Number of example trajectorier in you trajec folder of the simulation
 
+everything that is not mentioned is best left alone, it might be legacy code needed for some obscure subroutines.
+
 Now, at the end of the run you get a list of files into your results folder
 
 These files are:
@@ -40,7 +43,7 @@ ommega.dat: list of frequencies of bath
 P_X.dat : times and total X-Momentum
 squares_rohdaten.dat: times and MSD
 
-the folder trajec also contains a number of sample trajectories (number specified in global.h)
+the folder /trajec also contains a number of sample trajectories (number specified in global.h)
 
 in 1-D in the format t-x, else in x-y
 the plot folder is just for convenience for eventual pictures.
@@ -48,8 +51,12 @@ the plot folder is just for convenience for eventual pictures.
 
 Some rough notes on how to modify this:
 
-If you just want to specify another geometry within square lattices, write your own method in target.c and set TARGET_METHOD to your version.
+If you just want to specify another geometry WITHIN square lattices, write your own method in target.c and set TARGET_METHOD to your version in the globalh. Note that the particle starts in the cell center, so leave it free or do a case separation for the first lattice cell.
 
-If you want a completely new geometry, you will have to write a neq Steppmethod
+If you want a completely new geometry, you will have to write a new Steppmethod in steppmethods.c.
+
+Note that in constants.c new stepp methods have to be made aware to the routine setting the bath size.
+
+If you want to add soft potentials, be aware that you have to give the Verlet method the correct first derivative on top of implementing a new step method.
 
 
