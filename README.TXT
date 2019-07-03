@@ -3,7 +3,7 @@ d/dtv = K * v + random Force
 K*v = int(K(t') v(t-t'))dt'
 with an explicit deterministic bath providing both the friciton Kernel K and the random Force (on average) via interaction with a distinguished particle. We focus on the Kernel of power law type (leading to subdiffusion), so the convolution K*v becomes a fractal derivative and the whole equation is called the fractal Langevin equation.
 
-Read the uploaded introductory chapters of the thesis for details of the algorithm as well as some subtle changes made on Kuperman's implementation of the bath pf Kac-Zwanzig type for numerical implementation.
+Read the uploaded introductory chapters of the thesis for details of the algorithm as well as some subtle changes made on Kuperman's implementation of the bath of Kac-Zwanzig type for numerical implementation.
 
 For this to compile, you need the gnu scientific library and openmp installed
 
